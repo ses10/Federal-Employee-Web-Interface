@@ -3,6 +3,9 @@
     <head>
         <title>@yield('title')</title>
 
+    <link href="{{ asset('css/vendor/bootstrap-theme.css') }}" rel="stylesheet" type="text/css">    
+    <link href="{{ asset('css/vendor/bootstrap.css') }}" rel="stylesheet" type="text/css">    
+
     </head>
     <body>
         <div class="container">
