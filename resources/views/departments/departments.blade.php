@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title')
-    From departments
+    Departments
 @stop
 
 @section('content')
@@ -21,7 +21,7 @@
         <tr>
             <td class="col-md-2">{{ $department->dept_no }}</td>
             <td class="col-md-9">{{ $department->dept_name }}</td>
-            <td class="col-md-1"> <a class="btn btn-default" href="#" role="button">Summary</a> </td>
+            <td class="col-md-1"> <a class="btn btn-default" href="{{ url('/departments', $department->dept_no) }}" role="button">Summary</a> </td>
         </tr>
     @endforeach
     </tbody>
