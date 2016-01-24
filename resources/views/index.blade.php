@@ -16,7 +16,7 @@
                 </div>
 
                 <ul class="nav navbar-nav">
-                    <li><a href="#">All Departments</a></li>
+                    <li><a href="{{ url('/departments') }}">All Departments</a></li>
                     <li><a href="#">Add Employee</a></li>
                 </ul>
             </nav>
