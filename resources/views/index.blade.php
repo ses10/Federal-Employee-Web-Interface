@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>@yield('title')</title>
-
-    <link href="{{ asset('css/vendor/bootstrap-theme.css') }}" rel="stylesheet" type="text/css">    
+  
     <link href="{{ asset('css/vendor/bootstrap.css') }}" rel="stylesheet" type="text/css">    
+    <link href="{{ asset('css/vendor/bootstrap-theme.css') }}" rel="stylesheet" type="text/css">  
 
     </head>
     <body>
@@ -21,9 +21,9 @@
                 </ul>
             </nav>
 
-            <div class="content">
-                <div class="title">Master Template</div>
-            </div>
+
+            @yield('content')
+
         </div>
     </body>
 </html>
