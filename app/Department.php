@@ -32,4 +32,10 @@ class Department extends Model
 									->where('dept_no', '=', $deptNo)
 									->count('dept_emp.dept_no');
 	}
+
+	public static function averageSalary($deptNo){
+		return DB::table('salaries')->join('dept_emp', 'salaries.emp_no', '=', 'dept_emp.emp_no')
+									->where('dept_no', '=', $deptNo)
+									->avg('salary');		
+	}
 }
