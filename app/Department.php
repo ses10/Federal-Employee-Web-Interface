@@ -25,4 +25,11 @@ class Department extends Model
 									->where('dept_no', '=', $deptNo)
 									->sum('salaries.salary');
 	}
+
+	public static function numDepartmentEmployees($deptNo){
+		return DB::table('dept_emp')->join('employees', 'dept_emp.emp_no', '=', 'employees.emp_no')
+									->where('dept_emp.to_date', '=', '9999-01-01')
+									->where('dept_no', '=', $deptNo)
+									->count('dept_emp.dept_no');
+	}
 }
