@@ -17,4 +17,11 @@ class DepartmentsController extends Controller
 
     	return view('departments.departments')->with('departments', $departments);
     }
+
+    public function departmentSummary($deptNo){
+
+    	$department = Department::departmentSummary($deptNo);
+
+    	return view('departments.departmentSummary')->with('department', $department);
+    }
 }
