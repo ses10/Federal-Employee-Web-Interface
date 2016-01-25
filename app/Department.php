@@ -7,7 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model
 {
+	//returns a stdClass object with a given department's summary containing it's
+	//departmanger, total depart salary, # of employees, average employee salary
+	public static function departmentSummary($deptNo){
 
+		$summary = new \stdClass();
+		$summary->dept_no = $deptNo;
+
+		$departmentManager = Department::departmentManager($deptNo);
+
+		//add dept manager
+		$summary->first_name = $departmentManager->first_name;
+		$summary->last_name = $departmentManager->last_name;
+
+		//add total dept salaries
+		$summary->totalSalary = Department::totalDepartmentSalary($deptNo);
+
+		//add # of employees
+		$summary->numEmployees = Department::numDepartmentEmployees($deptNo);
+
+		//add avg employee salary
+		$summary->averageSalary = Department::averageSalary($deptNo);
+		
+		return $summary;
+	}
 
 	public static function departmentManager($deptNo){
 		return DB::table('employees')->join('dept_manager', 'dept_manager.emp_no', '=', 'employees.emp_no')
