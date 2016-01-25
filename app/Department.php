@@ -14,11 +14,13 @@ class Department extends Model
 		$summary = new \stdClass();
 		$summary->dept_no = $deptNo;
 
+		$summary->dept_name = DB::table('departments')->where('dept_no', '=' ,$deptNo)->first()->dept_name;
+
 		$departmentManager = Department::departmentManager($deptNo);
 
 		//add dept manager
-		$summary->first_name = $departmentManager->first_name;
-		$summary->last_name = $departmentManager->last_name;
+		$summary->manager_first_name = $departmentManager->first_name;
+		$summary->manager_last_name = $departmentManager->last_name;
 
 		//add total dept salaries
 		$summary->totalSalary = Department::totalDepartmentSalary($deptNo);
@@ -28,7 +30,7 @@ class Department extends Model
 
 		//add avg employee salary
 		$summary->averageSalary = Department::averageSalary($deptNo);
-		
+
 		return $summary;
 	}
 
