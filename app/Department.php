@@ -63,4 +63,13 @@ class Department extends Model
 									->where('dept_no', '=', $deptNo)
 									->avg('salary');		
 	}
+
+	public static function departmentEmployees($deptNo){
+		return DB::table('employees')->join('salaries', 'salaries.emp_no', '=', 'employees.emp_no')
+									->join('dept_emp', 'employees.emp_no', '=', 'dept_emp.emp_no')
+									->select('first_name', 'last_name', 'hire_date', 'dept_emp.to_date', 'salary')
+									->where('salaries.to_date', '=', '9999-01-01')
+									->where('dept_emp.to_date', '=', '9999-01-01')
+									->where('dept_no', '=', $deptNo)->take(10);
+	}
 }
