@@ -29,5 +29,7 @@
     </tbody>
 </table>
 
+<a class="btn btn-default" href="{{ url('/departments/employees', $department->dept_no) }}" role="button">Employees</a>
+
 @stop
 
