@@ -24,4 +24,10 @@ class DepartmentsController extends Controller
 
     	return view('departments.departmentSummary')->with('department', $department);
     }
+
+    public function departmentEmployees($deptNo){
+    	$employees = Department::departmentEmployees($deptNo);
+
+    	return view('departments.departmentEmployees')->with('employees', $employees);
+    }
 }
