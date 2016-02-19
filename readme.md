@@ -4,7 +4,10 @@ An employee database web interface. This is a redo of my web applications course
 
 
 <p align="center">
-  <img src="public/images/sample1.png"/>
-  <img src="public/images/sample2.png"/>
-  <img src="public/images/sample3.png"/>
+  <h3>App Homepage | Listing all Departments</h3>
+  <img src="public/images/sample1.png"/><br>
+  <h3>Summary for Dept</h3>
+  <img src="public/images/sample2.png"/><br>
+  <h3>Employees for a given Dept</h3>
+  <img src="public/images/sample3.png"/><br>
 </p>
